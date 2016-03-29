@@ -7,6 +7,9 @@ Errbit::Application.routes.draw do
   get '/locate/:id' => 'notices#locate', :as => :locate
   post '/deploys.txt' => 'deploys#create'
 
+  # Errbit redis handler daemon checker
+  get '/daemon/status' => 'daemon#status'
+
   resources :notices,   :only => [:show]
   resources :deploys,   :only => [:show]
   resources :users do

@@ -37,6 +37,10 @@ gem 'errbit_lighthouse_plugin'
 gem 'errbit_pivotal_plugin'
 gem 'errbit_redmine_plugin'
 gem 'errbit_unfuddle_plugin'
+gem 'newrelic_rpm'
+
+# Errbit redis handler daemon status
+gem 'redis', '~>3.2'
 
 # Notification services
 # ---------------------------------------

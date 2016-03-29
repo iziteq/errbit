@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## 0.6.1
 https://github.com/errbit/errbit/issues?utf8=%E2%9C%93&q=milestone%3A0.6.1
 
@@ -21,6 +22,14 @@ https://github.com/errbit/errbit/issues?utf8=%E2%9C%93&q=milestone%3A0.5.0
 - #820 Environment-only configuration
 
 ## 0.3.0
+=======
+## 2.56.0 ##
+*    Add errbit_redis_handler monitoring ([SRV-8091](https://jira.iziteq.com/browse/SRV-8091)).
+
+     *Alexander Kudrin*
+
+## 0.3.0 - Not released Yet
+>>>>>>> be5f42fa... SRV-8091 Add monit endpoint
 
 ### Improvements
 

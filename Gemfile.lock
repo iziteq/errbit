@@ -209,6 +209,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     netrc (0.10.3)
+    newrelic_rpm (5.1.0.344)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     nokogiri (1.8.1-java)
@@ -311,6 +312,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
     rake (12.0.0)
+    redis (3.3.5)
     ref (2.0.0)
     request_store (1.1.0)
     responders (2.4.0)
@@ -468,6 +470,7 @@ DEPENDENCIES
   mongoid (= 5.0.2)
   mongoid-rspec (~> 3.0.0)
   mongoid_rails_migrations
+  newrelic_rpm
   omniauth-github
   omniauth-google-oauth2
   phantomjs
@@ -483,6 +486,7 @@ DEPENDENCIES
   rails_autolink
   railties (~> 4.2.9)
   rake
+  redis (~> 3.2)
   ri_cal
   rspec (~> 3.5)
   rspec-activemodel-mocks

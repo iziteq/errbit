@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   match '/notifier_api/v2/notices' => 'notices#create', via: [:get, :post]
   get '/locate/:id' => 'notices#locate', :as => :locate
 
-  resources :notices, only: [:show]
+  # Errbit redis handler daemon checker
+  get '/daemon/status' => 'daemon#status'
+
+  resources :notices,   :only => [:show]
+  resources :deploys,   :only => [:show]
   resources :users do
     member do
       delete :unlink_github

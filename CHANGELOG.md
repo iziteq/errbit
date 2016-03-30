@@ -1,3 +1,8 @@
+## 2.56.0 ##
+*    Add errbit_redis_handler monitoring ([SRV-8091](https://jira.iziteq.com/browse/SRV-8091)).
+
+     *Alexander Kudrin*
+
 ## 0.3.0 - Not released Yet
 
 ### Improvements

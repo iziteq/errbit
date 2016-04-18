@@ -4,7 +4,7 @@ require 'redis'
 
 class DaemonStatus
 
-  QUEUE_LIMIT         = 30
+  QUEUE_LIMIT         = 10
   COMMANDSTATS_LIMIT = 1_000_000_000
 
   include Singleton
@@ -24,12 +24,7 @@ class DaemonStatus
     # Suppose we've done it, then fail status endpoint and restart errbit manually
     return false if current_lpop_count >= COMMANDSTATS_LIMIT
 
-    alive = first_run? || daemon_is_working?(current_lpop_count) || queue_is_empty?
-
-    # we have to increase througput of the queue processor
-    # so, notify about it by failing
-    alive = false unless queue_has_allowed_length?
-    
+    alive = first_run? || daemon_is_working?(current_lpop_count) || queue_has_allowed_length?    
     @prev_lpop_count = current_lpop_count
     alive
   end
@@ -39,10 +34,6 @@ class DaemonStatus
     def queue_has_allowed_length?
       queue_size =  redis.llen(redis_config['key'])
       queue_size < QUEUE_LIMIT
-    end
-
-    def queue_is_empty?
-      redis.llen(redis_config['key']) == 0
     end
 
     def daemon_is_working?(current_lpop_count)

@@ -11,7 +11,7 @@ lock '3.4.1'
 
 set :application, 'errbit'
 set :repo_url, 'https://github.com/iziteq/errbit.git'
-set :branch, ENV['branch'] || 'master'
+set :branch, ENV['branch'] || 'izi_master'
 set :deploy_to, '/var/www/iziteq/errbit'
 set :keep_releases, 5
 
@@ -26,7 +26,7 @@ set :linked_files, fetch(:linked_files, []) + %w(
   config/newrelic.yml
   config/puma.rb
   config/daemon_config.yml
-  javascripts/notifier.js
+  public/javascripts/notifier.js
 )
 
 set :linked_dirs, fetch(:linked_dirs, []) + %w(

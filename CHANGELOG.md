@@ -1,3 +1,8 @@
+## 2.67.0 ##
+*    Fix Slack integration ([SRV-9695](https://jira.iziteq.com/browse/SRV-9695)).
+
+     *Nikolai Volochaev*
+
 ## 2.56.0 ##
 *    Add errbit_redis_handler monitoring ([SRV-8091](https://jira.iziteq.com/browse/SRV-8091)).
 

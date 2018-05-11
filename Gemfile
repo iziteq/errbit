@@ -30,6 +30,11 @@ gem 'useragent'
 # It's for internal use only, and we monkeypatch certain methods
 gem 'hoptoad_notifier', "~> 2.4"
 
+gem 'newrelic_rpm'
+
+# Errbit redis handler daemon status
+gem 'redis', '~>3.2'
+
 # Notification services
 # ---------------------------------------
 gem 'campy'

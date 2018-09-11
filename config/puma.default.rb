@@ -1,19 +1,15 @@
-# https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
+directory '/var/www/iziteq/errbit/current'
+rackup "/var/www/iziteq/errbit/current/config.ru"
+environment 'production'
 
-workers Integer(ENV['WEB_CONCURRENCY'] || 2)
-threads_count = Integer(ENV['MAX_THREADS'] || 5)
-threads threads_count, threads_count
+pidfile "/var/www/iziteq/errbit/shared/tmp/pids/puma.pid"
+state_path "/var/www/iziteq/errbit/shared/tmp/pids/puma.state"
+stdout_redirect '/var/www/iziteq/errbit/shared/log/puma_access.log', '/var/www/iziteq/errbit/shared/log/puma_error.log', true
 
-preload_app!
+threads 0,16
 
-rackup DefaultRackup
-port ENV['PORT'] || 8080
-environment ENV['RACK_ENV'] || 'development'
+bind 'unix:///var/www/iziteq/errbit/shared/tmp/sockets/puma.sock'
 
-on_worker_boot do
-  # Worker specific setup for Rails 4.1+
-  # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
-  ActiveSupport.on_load(:active_record) do
-    ActiveRecord::Base.establish_connection
-  end
-end
+workers 1
+
+activate_control_app

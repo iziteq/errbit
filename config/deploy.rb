@@ -11,7 +11,7 @@ lock '3.4.1'
 
 set :application, 'errbit'
 set :repo_url, 'https://github.com/iziteq/errbit.git'
-set :branch, ENV['branch'] || 'izi_master'
+set :branch, ENV['branch'] || 'master'
 set :deploy_to, '/var/www/iziteq/errbit'
 set :keep_releases, 5
 
@@ -20,6 +20,7 @@ set :ssh_options, forward_agent: true
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.4.2'
+set :rbenv_path, '/home/ubuntu/.rbenv/'
 
 set :linked_files, fetch(:linked_files, []) + %w(
   .env
